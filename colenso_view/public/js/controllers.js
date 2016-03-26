@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-  controller('AppCtrl', function ($scope, $http) {
+  controller('AppCtrl', ['$scope', '$http', function($scope, $http){
 
     $http({
       method: 'GET',
@@ -16,12 +16,7 @@ angular.module('myApp.controllers', []).
       $scope.name = 'Error!';
     });
 
-  }).
-  controller('MyCtrl1', function ($scope) {
-    // write Ctrl here
-
-  }).
-  controller('MyCtrl2', function ($scope) {
-    // write Ctrl here
-
-  });
+  }]);
+    // .controller('MainCtrl', ['$scope', '$http', function($scope, $http){
+    //   // Testing
+    // }]);
