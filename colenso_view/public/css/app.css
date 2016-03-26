@@ -1,7 +1,14 @@
 /* app css stylesheet */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.main_page {
+  height: 100%;
+}
 .menu {
   border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
   display: flex;
   flex-direction: row;
   background-color: darkgreen;

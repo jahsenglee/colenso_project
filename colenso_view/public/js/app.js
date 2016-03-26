@@ -12,7 +12,8 @@ config(function ($routeProvider, $locationProvider) {
   $routeProvider.
     when('/view1', {
       templateUrl: 'partials/main',
-      controller: 'MainCtrl'
+      controller: 'MainCtrl',
+      css: 'partials/main.css'
     }).
     when('/view2', {
       templateUrl: 'partials/partial2',

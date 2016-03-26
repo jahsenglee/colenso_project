@@ -1,0 +1,14 @@
+/* main.jade stylesheet */
+div {
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.title {
+    order: 0;
+    font-size: 50px;
+}
