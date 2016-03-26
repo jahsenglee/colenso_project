@@ -1,15 +1,21 @@
 /* app css stylesheet */
-
 .menu {
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
-  padding: 0 0 0.5em;
+  display: flex;
+  flex-direction: row;
+  background-color: darkgreen;
 }
 
-.menu > p {
-  display: inline;
+.header_title {
+  order: 0;
+  padding-right: .5em;
+  padding-left: 1em;
 }
 
-.menu > p:before {
-  content: " | ";
+.header_item {
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  border-right: 0.1em solid lightgray;
+  order: 0;
 }
