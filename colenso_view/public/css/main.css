@@ -1,6 +1,4 @@
 /* main.jade stylesheet */
-div {
-}
 .page {
     display: flex;
     flex-direction: column;
