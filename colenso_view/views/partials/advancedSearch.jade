@@ -1,0 +1,10 @@
+div.page(ng-controller="AdvancedSearchCtrl")
+  h2.title Advanced Search
+  div
+    input(type="text", ng-model="searchBox.searchString", ng-change="search()", placeholder="Search...");
+  div
+    label Search Options:
+    label XPATH
+      input(type="checkbox", ng-model="searchBox.searchType.xPath")
+    label Logical Operators
+      input(type="checkbox", ng-model="searchBox.searchType.logical")

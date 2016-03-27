@@ -10,17 +10,17 @@ angular.module('myApp', [
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/view1', {
+    when('/home', {
       templateUrl: 'partials/main',
       controller: 'MainCtrl',
       css: 'partials/main.css'
     }).
-    when('/view2', {
-      templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
+    when('/advanced_search', {
+      templateUrl: 'partials/advancedSearch',
+      controller: 'AdvancedSearchCtrl'
     }).
     otherwise({
-      redirectTo: '/view1'
+      redirectTo: '/home'
     });
 
   $locationProvider.html5Mode(true);
