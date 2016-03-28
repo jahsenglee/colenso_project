@@ -6,9 +6,11 @@ html, body {
 }
 .main_page {
   height: 100%;
+  background-color: green;
+  color: white;
 }
 .header {
-  border-bottom: 0.1em solid black;
+  border-bottom: 0.1em solid darkgreen;
   display: flex;
   flex-direction: row;
   background-color: darkgreen;
@@ -42,5 +44,5 @@ a:visited {
 }
 
 a:hover {
-  text-decoration: underline;
+  background-color: lightgreen;
 }

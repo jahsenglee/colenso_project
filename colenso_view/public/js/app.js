@@ -13,7 +13,6 @@ config(function ($routeProvider, $locationProvider) {
     when('/home', {
       templateUrl: 'partials/main',
       controller: 'MainCtrl',
-      css: 'partials/main.css'
     }).
     when('/advanced_search', {
       templateUrl: 'partials/advancedSearch',

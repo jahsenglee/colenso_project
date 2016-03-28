@@ -1,0 +1,25 @@
+/* stylesheet for anything under header */
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.title {
+    order: 0;
+    font-size: 50px;
+}
+
+.search_box {
+    padding-bottom: 1em;
+}
+
+.search_options {
+    display: flex;
+    flex-direction: row;
+}
+
+.option {
+    padding-left: 0.5em;
+}
