@@ -10,7 +10,6 @@ html, body {
   color: white;
 }
 .header {
-  border-bottom: 0.1em solid darkgreen;
   display: flex;
   flex-direction: row;
   background-color: darkgreen;
