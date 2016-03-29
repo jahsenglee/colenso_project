@@ -1,4 +1,7 @@
 div.page(ng-controller="MainCtrl")
     h2.title COLENSO PROJECT
-    div
+    div.search_box
         input(type="text", ng-model="searchBox.searchString", ng-change="search()", placeholder="Search...");
+    div(vs-repeat)
+        div.doc_title(ng-repeat="t in searchData.title")
+            p2.title_string {{t.__text}}

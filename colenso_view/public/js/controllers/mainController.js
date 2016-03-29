@@ -10,7 +10,14 @@ angular.module('myApp.controllers').controller('MainCtrl',
       $scope.search = function () {
         // if string is not empty/spaces
         if ($scope.searchBox.searchString.match(/^\s*$/) === null) {
-            $scope.searchData = searchService.query($scope.searchBox.searchString);
+            searchService.query($scope.searchBox.searchString)
+              .then(function (res) {
+                $scope.searchData = res.data.res;
+              }, function failure(res) {
+                console.log("Query failed: " + res);
+              });
+        } else {
+          $scope.searchData = [];
         }
       }
     }]);

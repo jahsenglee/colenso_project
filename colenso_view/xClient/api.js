@@ -3,6 +3,8 @@
 
     var basex = require('basex');
     var express = require('express');
+    var X2JS = require('x2js');
+    var x2js = new X2JS();
 
     var router = express.Router();
 
@@ -11,7 +13,7 @@
 
     /**
      * Open Query API Routing
-     * Executes and returns an XQuery query
+     * Executes and returns the XML parsed as JSON
      */
     router.get('/query', function(req, res){
         var client = newClient();
@@ -31,7 +33,7 @@
             if (err){
                 res.status(500).send(err);
             } else {
-                res.send(data.result);
+                res.send(x2js.xml2js('<res>' + data.result + '</res>'));
             }
         })
     });
