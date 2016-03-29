@@ -9,14 +9,14 @@
     var router = express.Router();
 
     var namespace = 'XQUERY declare default element namespace "http://www.tei-c.org/ns/1.0";\n';
+    var client = newClient();
     //var query_end = ' return $v';
 
     /**
      * Open Query API Routing
-     * Executes and returns the XML parsed as JSON
+     * Executes and returns the title and path as JSON
      */
     router.get('/query', function(req, res){
-        var client = newClient();
         var query = req.query.query;
 
         // var full_query = namespace + "for $v in docs\n" +
@@ -24,9 +24,11 @@
         //   "return $v";
 
         var full_query = namespace + "for $v in .\n" +
-            "where $v//body[. contains text \"" + query + "\" ]\n" + 
+            "where $v//body[. contains text '" + query + "' ]\n" + 
             "order by $v//title\n" + 
-            "return $v//title";
+            "return <data>{$v//title}" +
+                          "<path>{db:path($v)}</path>" +
+                    "</data>";
 
         console.log(full_query);
         client.execute(full_query, function(err, data){
@@ -34,6 +36,22 @@
                 res.status(500).send(err);
             } else {
                 res.send(x2js.xml2js('<res>' + data.result + '</res>'));
+            }
+        })
+    });
+    
+    router.get('/querySingle', function(req, res) {
+        var query = req.query.query;
+        
+        var full_query = "XQUERY " + 
+          "doc('docs/" + query + "')";
+        
+        console.log(full_query);
+        client.execute(full_query, function(err, data) {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+                res.send(data.result);
             }
         })
     });
