@@ -33,9 +33,9 @@
     router.get('/index', function(req, res){
         var client = newClient();
         var index = req.query.index;
-        //console.log('XQUERY index:'+index+'("Colenso")');
+        //console.log('XQUERY index:'+index+'("docs")');
 
-        client.execute('XQUERY index:'+'facets'+'("Colenso")', function(err, data){
+        client.execute('XQUERY index:'+'facets'+'("docs")', function(err, data){
             if (err){
                 res.status(500).send(err);
             } else {
@@ -49,7 +49,7 @@
         var client = newClient();
         var dir = req.query.dir;
 
-        client.execute('XQUERY file:children("./lib/Colenso/'+dir+'")', function(err, data){
+        client.execute('XQUERY file:children("./lib/docs/'+dir+'")', function(err, data){
             if (err){
                 res.status(404).send(err);
             } else {
@@ -62,7 +62,7 @@
      * Return 404 for all unknown API commands
      */
     router.all('/*', function(req, res){
-        res.statusCode(404);
+        res.status(404).send();
     });
 
     /**
@@ -70,7 +70,7 @@
      */
     function newClient(){
         var client = new basex.Session('localhost', 1984, 'admin', 'admin');
-        client.execute('OPEN Colenso');
+        client.execute('OPEN docs');
 
         return client;
     }
