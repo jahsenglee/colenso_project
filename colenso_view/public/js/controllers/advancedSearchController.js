@@ -4,10 +4,7 @@ angular.module('myApp.controllers').controller('AdvancedSearchCtrl',
     function($scope, $http) {
       $scope.searchBox = {
         searchString: "",
-        searchType: {
-          xPath: false,
-          logical: false
-        } 
+        searchType: "XPATH"
       };
 
       $scope.search = function() {

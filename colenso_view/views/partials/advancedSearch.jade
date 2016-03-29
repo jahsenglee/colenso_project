@@ -5,6 +5,6 @@ div.page(ng-controller="AdvancedSearchCtrl")
   div.search_options
     label Search Options:
     label.option XPATH
-      input(type="checkbox", ng-model="searchBox.searchType.xPath")
+      input(type="radio", ng-model="searchBox.searchType", value="XPATH")
     label.option Logical Operators
-      input(type="checkbox", ng-model="searchBox.searchType.logical")
+      input(type="radio", ng-model="searchBox.searchType", value="LOGICAL")
