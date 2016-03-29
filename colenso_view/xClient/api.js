@@ -24,7 +24,7 @@
         //   "return $v";
 
         var full_query = namespace + "for $v in .\n" +
-            "where $v//body[. contains text '" + query + "' ]\n" + 
+            "where $v//title[. contains text '" + query + "' ]\n" + 
             "order by $v//title\n" + 
             "return <data>{$v//title}" +
                           "<path>{db:path($v)}</path>" +
