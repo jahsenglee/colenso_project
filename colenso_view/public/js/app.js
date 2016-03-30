@@ -18,6 +18,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/advancedSearch',
       controller: 'AdvancedSearchCtrl'
     }).
+    when('/viewer', {
+      templateUrl: 'partials/viewer',
+      controller: 'ViewerCtrl'
+    }).
     otherwise({
       redirectTo: '/home'
     });

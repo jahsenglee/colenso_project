@@ -2,7 +2,8 @@ angular.module('myApp.controllers').controller('MainCtrl',
   ['$scope',
     '$http',
     'searchService',
-    function ($scope, $http, searchService) {
+    '$window',
+    function ($scope, $http, searchService, $window) {
       $scope.searchBox = {searchString: ""};
       
       $scope.searchData = [];
@@ -30,6 +31,7 @@ angular.module('myApp.controllers').controller('MainCtrl',
         searchService.querySingle(path)
           .then(function(res) {
             console.log(res.data);
+            $scope.XMLDoc = res.data;
           }, function failure(res) {
             console.log("Document load failed");
         });
