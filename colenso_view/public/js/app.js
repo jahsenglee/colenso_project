@@ -25,6 +25,9 @@ config(function ($routeProvider, $locationProvider) {
     when('/add', {
       templateUrl: 'partials/add'
     }).
+    when('/edit', {
+      templateUrl: 'partials/edit'
+    }).
     otherwise({
       redirectTo: '/home'
     });
