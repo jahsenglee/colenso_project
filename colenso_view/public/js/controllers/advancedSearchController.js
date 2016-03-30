@@ -17,7 +17,6 @@ angular.module('myApp.controllers').controller('AdvancedSearchCtrl',
               .then(function (res) {
                 // have to check again as promise could have resolved after change
                 $scope.searchData = res.data.res.data; // Absolutely disgusting
-                console.log($scope.searchData);
               }, function failure(res) {
                 console.log("XPath/XQuery failed");
               });

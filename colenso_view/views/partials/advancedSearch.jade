@@ -10,5 +10,6 @@ div.page(ng-controller="AdvancedSearchCtrl")
     label.option Logical Operators
       input(type="radio", ng-model="searchBox.searchType", value="LOGICAL")
   div
-    div.doc_title(ng-repeat="t in searchData", ng-click="openDoc(t.path)")
-      p2.title_string {{t.title}}
+    a.doc_link(href="/viewer")
+      div.doc_title(ng-repeat="t in searchData", ng-click="openDoc(t.path)")
+        p2.title_string {{t.title}}
