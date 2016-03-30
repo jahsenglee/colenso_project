@@ -3,5 +3,7 @@ angular.module('myApp.controllers').controller('ViewerCtrl',
     '$http',
     'searchService',
     function($scope, $http, searchService) {
-      
+      $scope.init = function() {
+        $scope.XMLDoc = searchService.getXMLDoc();
+      }
     }]);

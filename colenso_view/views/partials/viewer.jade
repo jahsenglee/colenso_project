@@ -1,2 +1,3 @@
-div(ng-controller="ViewerCtrl")
-    h1 asdflkjasdflkajsdflkj
+div(ng-controller="ViewerCtrl", ng-init="init()")
+    div.doc_view
+        div(ng-bind-html-unsafe="XMLDoc")

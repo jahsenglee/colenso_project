@@ -43,3 +43,26 @@
     padding-left: 10px;
 }
 
+.doc_link {
+    border-right: 0.1em solid green;
+    order: 0;
+    color: white;
+}
+
+.doc_link:link {
+    text-decoration: none;
+}
+
+.doc_link:visited {
+    text-decoration: none;
+}
+
+.doc_link:hover {
+    background-color: lightgreen;
+}
+
+.doc_view {
+    padding-top: 2em;
+    padding-left: 1em;
+    background-color: green;
+}

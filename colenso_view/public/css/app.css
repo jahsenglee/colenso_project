@@ -35,14 +35,14 @@ p {
   padding-right: 0.5em;
 }
 
-a:link {
+.header_item:link {
   text-decoration: none;
 }
 
-a:visited {
+.header_item:visited {
   text-decoration: none;
 }
 
-a:hover {
+.header_item:hover {
   background-color: lightgreen;
 }
