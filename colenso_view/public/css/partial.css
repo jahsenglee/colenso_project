@@ -66,3 +66,28 @@
     padding-left: 1em;
     background-color: green;
 }
+
+.doc_nav {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nav_btn{
+    padding: 0.75em 1.75em 0.75em 1.75em;
+    background-color: darkgreen;
+    color: white;
+    border-right: 2px solid green;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: lightgreen;
+}
+

@@ -1,3 +1,8 @@
 div(ng-controller="ViewerCtrl", ng-init="init()")
     div.doc_view
+        div.doc_nav
+            a.nav_btn(href="/home")
+                div Close
+            a.nav_btn(href="/edit")
+                div Edit
         div(ng-bind-html-unsafe="XMLDoc")
