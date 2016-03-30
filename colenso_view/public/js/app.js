@@ -22,6 +22,9 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/viewer',
       controller: 'ViewerCtrl'
     }).
+    when('/add', {
+      templateUrl: 'partials/add'
+    }).
     otherwise({
       redirectTo: '/home'
     });

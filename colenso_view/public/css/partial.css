@@ -93,3 +93,25 @@ a:hover {
     background-color: lightgreen;
 }
 
+.add_btn_holder{
+    display: flex;
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+.add_btn {
+    text-align: center;
+    min-width: 80px;
+    max-width: 80px;
+    padding: 0.75em 1.75em 0.75em 1.75em;
+    background-color: darkgreen;
+    border: 3px solid green;
+}
+
+.raw_input {
+    min-width: 790px;
+    min-height: 830px;
+    resize: none;
+    border: none;
+    background-color: darkgreen;
+}
