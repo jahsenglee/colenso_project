@@ -3,12 +3,12 @@ extends layout
 block body
   div.main_page(ng-controller='AppCtrl')
     div.header
-      div.header_title
-       p Coloenso Project
-      a.header_item(href='home')
-        p Home
-      a.header_item(href='advanced_search')
+      a.header_title(href='/home')
+       p Colenso Project
+      a.header_item(href='/advanced_search')
         p Advanced Search
+      a.header_item(href='/add')
+        p Add
 
     div(ng-view)
 

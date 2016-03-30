@@ -19,12 +19,18 @@ html, body {
 
 .header_title {
   order: 0;
+  font-weight: bolder;
+  min-width: 10em;
   padding-right: .5em;
   padding-left: 1em;
   border-right: 0.1em solid green;
+  color: white;
+  text-align: center;
 }
 
 .header_item {
+  text-align: center;
+  min-width: 5em;
   border-right: 0.1em solid green;
   order: 0;
   color: white;
@@ -35,14 +41,14 @@ p {
   padding-right: 0.5em;
 }
 
-.header_item:link {
+a:link {
   text-decoration: none;
 }
 
-.header_item:visited {
+a:visited {
   text-decoration: none;
 }
 
-.header_item:hover {
+a:hover {
   background-color: lightgreen;
 }
