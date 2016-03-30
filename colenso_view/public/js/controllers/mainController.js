@@ -13,7 +13,6 @@ angular.module('myApp.controllers').controller('MainCtrl',
         if ($scope.searchBox.searchString.match(/^\s*$/) === null) {
           searchService.query($scope.searchBox.searchString)
             .then(function (res) {
-
               // have to check again as promise could have resolved after change
               if ($scope.searchBox.searchString != "") {
                 $scope.searchData = res.data.res.data; // Absolutely disgusting

@@ -39,8 +39,11 @@
             }
         })
     });
-    
-    router.get('/querySingle', function(req, res) {
+
+  /**
+   * Querying a single document from the basex database
+   */
+  router.get('/querySingle', function(req, res) {
         var query = req.query.query;
         
         var full_query = "XQUERY " + 
@@ -51,12 +54,74 @@
             if (err) {
                 res.status(500).send(err);
             } else {
-                res.send(data.result);
+              res.send(data.result);
             }
         })
     });
 
-    /**
+  /**
+   * Querying based on XPath or XQuery
+   */
+  router.get('/queryXPath', function(req, res) {
+    var query = req.query.query;
+
+    query.replace('%20', ' '); // replace %20 with proper spaces
+    var full_query = namespace + query ;
+
+    console.log(full_query);
+    client.execute(full_query, function(err, data) {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.send(x2js.xml2js('<res>' + data.result + '</res>'));
+      }
+    })
+  });
+
+  /**
+   * Querying based on Logical operators
+   */
+  router.get('/queryLogical', function(req, res) {
+    var query = req.query.query;
+    console.log(query);
+
+    //Parsing
+    var split = query.split(" ");
+    
+    var query = "";
+    
+    for(var i = 0; i < split.length; i++) {
+      if(split[i] == '!!') {
+        query += 'ftand ftnot ';
+      } else if(split[i] == '||') {
+        query += 'ftor ';
+      } else if(split[i] == '$$') {
+        query += 'ftand '
+      }
+      else {
+        query += "'" + split[i] + "' "
+      }
+    }
+    console.log(query);
+    
+    var full_query = namespace + "for $v in .\n" +
+      "where $v//title[. contains text " + query + " ]\n" +
+      "order by $v//title\n" +
+      "return <data>{$v//title}" +
+      "<path>{db:path($v)}</path>" +
+      "</data>";
+    
+    console.log(full_query);
+    client.execute(full_query, function(err, data) {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.send(x2js.xml2js('<res>' + data.result + '</res>'));
+      }
+    })
+  });
+  
+  /**
      * Return 404 for all unknown API commands
      */
     router.all('/*', function(req, res){

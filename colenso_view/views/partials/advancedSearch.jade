@@ -1,10 +1,14 @@
 div.page(ng-controller="AdvancedSearchCtrl")
   h2.title Advanced Search
   div.search_box
-    input(type="text", ng-model="searchBox.searchString", ng-change="search()", placeholder="Search...");
+    input(type="text", ng-model="searchBox.searchString", placeholder="Search...");
+    button(ng-click="search()") GO
   div.search_options
     label Search Options:
     label.option XPATH
       input(type="radio", ng-model="searchBox.searchType", value="XPATH")
     label.option Logical Operators
       input(type="radio", ng-model="searchBox.searchType", value="LOGICAL")
+  div
+    div.doc_title(ng-repeat="t in searchData", ng-click="openDoc(t.path)")
+      p2.title_string {{t.title}}
