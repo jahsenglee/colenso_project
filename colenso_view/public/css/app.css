@@ -18,6 +18,7 @@ html, body {
 }
 
 .header_title {
+  display: flex;
   order: 0;
   font-weight: bolder;
   min-width: 10em;

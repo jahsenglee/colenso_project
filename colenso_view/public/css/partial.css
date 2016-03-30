@@ -26,6 +26,8 @@
 }
 
 .doc_title {
+    min-width: 50em;
+    max-width: 50em;
     background-color: seagreen;
     padding-top: 1em;
     padding-bottom: 1em;
