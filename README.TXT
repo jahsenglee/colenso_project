@@ -1,10 +1,13 @@
 Jah Seng Lee
 300279468
 
-To start the project
+repo: https://github.com/jahsenglee/colenso_project
+
+To start the project:
 	cd colenso_docs/scripts
 	sh start_colenso_doc.sh // starts baseX server
 
+In a seperate window/tab:
 	cd colenso_view
 	node app.js
 
