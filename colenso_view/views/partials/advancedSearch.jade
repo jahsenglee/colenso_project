@@ -1,7 +1,7 @@
 div.page(ng-controller="AdvancedSearchCtrl")
   h2.title Advanced Search
   div.search_box
-    input(type="text", ng-model="searchBox.searchString", placeholder="Search...");
+    input.search_bar(type="text", ng-model="searchBox.searchString", placeholder="Search...");
     button(ng-click="search()") GO
   div.search_options
     label Search Options:

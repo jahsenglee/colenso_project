@@ -16,6 +16,13 @@
     padding-bottom: 1em;
 }
 
+.search_bar {
+    height: 40px;
+    width: 400px;
+    padding-left: 10px;
+    color: white;
+}
+
 .search_options {
     display: flex;
     flex-direction: row;
@@ -115,4 +122,39 @@ a:hover {
     resize: none;
     border: none;
     background-color: darkgreen;
+}
+
+input{
+    background-color: darkgreen;
+    border: none;
+}
+
+.form_input {
+    padding-top: 30px;
+}
+
+label {
+    padding-right: 5px;
+}
+
+.doc_input {
+}
+
+.doc_input:focus {
+    outline: none;
+}
+
+button {
+    height: 42px;
+    background-color: darkgreen;
+    border: none;
+    color: white;
+}
+
+button:hover {
+    background-color: lightgreen;
+}
+
+button:focus {
+    outline: none;
 }
